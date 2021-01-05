@@ -31,7 +31,7 @@ namespace PhoneBook.App
                 using (UnitOfWork db = new UnitOfWork())
                 {
                     string name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    if (MessageBox.Show($"آیا از حذف {name} مطمئن هستید؟", "حذف اطلاعات شخص", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show($"Are you sure for deletion of {name} ?", "Delete Person Information", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         int phoneInfoId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                         db.PhoneBookRepository.DeletePhoneInfoById(phoneInfoId);
